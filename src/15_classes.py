@@ -3,7 +3,7 @@
 
 # YOUR CODE HERE
 class LatLon:
-    def func(self, lat, lon):
+    def __init__(self, lat, lon):
         self.lat = lat
         self.lon = lon
 
@@ -16,8 +16,8 @@ print(x.lon)
 
 # YOUR CODE HERE
 class Waypoint(LatLon):
-    def func(self,lat, lon,name):
-        super().func(lat, lon)
+    def __init__(self,lat, lon,name):
+        super().__init__(lat, lon)
         self.name = name
     def __str__(self):
         return 'Waypoint(name='+self.name+', lat='+str(self.lat)+',lon='+str(self.lon)+')'
@@ -31,8 +31,8 @@ print(y.name)
 
 # YOUR CODE HERE
 class Geocache(Waypoint):
-    def func(self,lat, lon,name, difficulty,size):
-        super().func(lat, lon,name)
+    def __init__(self,lat, lon,name, difficulty,size):
+        super().__init__(lat, lon,name)
         self.difficulty = difficulty
         self.size = size
     def __str__(self):
